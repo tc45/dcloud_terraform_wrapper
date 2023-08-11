@@ -7,7 +7,7 @@ import os
 
 def get_token(id, secret):
     url = 'https://cloudsso.cisco.com/as/token.oauth2'
-    payload = 'grant_type=client_credentials&client_id=444894j86pcxyhnjwxubrdjc&client_secret=444894j86pcxyhnjwxubrdjc'
+    payload = f'grant_type=client_credentials&client_id={id}&client_secret={secret}'
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.request('POST', url, data=payload, headers=headers, allow_redirects=False, timeout=30)
     if response.status_code != 200:
